@@ -1,23 +1,39 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="GFG GitHub Sync Logo" width="140"/>
+<img src="icons/icon128.png" alt="GFG GitHub Sync Logo" width="110"/>
 
 # GFG → GitHub Sync
 
-### Automatically sync your solved GeeksforGeeks problems to GitHub.
+### Automatically sync your solved GeeksforGeeks problems to GitHub — zero manual work.
 
 <p>
   <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Extension"/>
   <img src="https://img.shields.io/badge/Manifest-V3-34A853?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Manifest V3"/>
   <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
   <img src="https://img.shields.io/badge/GitHub-API-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub API"/>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License"/>
+  <img src="https://img.shields.io/badge/License-MIT-3FB950?style=for-the-badge" alt="MIT License"/>
 </p>
 
-<p>
-  <strong>Never lose track of your DSA practice again.</strong><br/>
-  Solve on GeeksforGeeks. Submit successfully. GFG GitHub Sync handles the backup.
-</p>
+<strong>Solve on GeeksforGeeks. Submit successfully. GFG GitHub Sync handles the backup.</strong>
+
+<br/>
+
+<a href="#-installation">Install</a> ·
+<a href="#-key-features">Features</a> ·
+<a href="#-how-it-works">How it works</a> ·
+<a href="#-usage">Usage</a> ·
+<a href="#-troubleshooting">Troubleshooting</a>
+
+</div>
+
+<br/>
+
+<div align="center">
+
+|                     Popup Dashboard                     |                  GitHub Connection                   |
+| :-------------------------------------------------------: | :-----------------------------------------------------: |
+| <img src="assets/screenshots/dashboard.png" width="340"/> | <img src="assets/screenshots/connection.png" width="340"/> |
+|      *Live sync stats, last upload, and status*         |      *Connect once — username, repo, token*          |
 
 </div>
 
@@ -27,65 +43,38 @@
 
 **GFG GitHub Sync** is a Chrome extension that automatically backs up accepted **GeeksforGeeks** solutions to a GitHub repository.
 
-Instead of manually copying your solution, creating folders, opening GitHub, committing files, and maintaining your DSA repository by hand, the extension detects a successful submission and syncs the solution automatically.
+Instead of manually copying your solution, creating folders, opening GitHub, and committing files by hand, the extension detects a successful submission and syncs it for you — organized, timestamped, and documented.
 
-It is designed for developers and students who want a clean, organized GitHub history of their problem-solving journey.
+Built for developers and students who want a clean, readable GitHub history of their DSA practice.
 
-### The basic workflow
+<br/>
 
-```text
-Solve Problem on GeeksforGeeks
-            ↓
-      Submit Solution
-            ↓
-   Problem Solved Successfully
-            ↓
-    GFG GitHub Sync detects it
-            ↓
-       Extracts your code
-            ↓
-    Extracts problem metadata
-            ↓
-       Connects to GitHub
-            ↓
-  Creates / updates solution files
-            ↓
-        Generates README
-            ↓
-       Updates your stats
+```mermaid
+flowchart LR
+    A["Solve problem\non GeeksforGeeks"] --> B[Submit solution]
+    B --> C{"Problem Solved\nSuccessfully?"}
+    C -- Yes --> D[GFG GitHub Sync\ndetects it]
+    D --> E[Extract code\n& metadata]
+    E --> F[Connect to GitHub]
+    F --> G[Create / update\nsolution files]
+    G --> H[Generate README]
+    H --> I[Update sync stats]
+    C -- No --> B
 ```
-
----
-
-## 🖼️ Extension Preview
-
-<div align="center">
-
-### Dashboard
-
-<img src="assets/screenshots/dashboard.png" alt="GFG GitHub Sync dashboard" width="520"/>
-
-<br/><br/>
-
-### GitHub Connection
-
-<img src="assets/screenshots/connection.png" alt="GitHub connection screen" width="520"/>
-
-</div>
 
 ---
 
 ## 🚀 Key Features
 
-### 🔄 Automatic Solution Sync
+<table>
+<tr>
+<td width="50%" valign="top">
 
-Once a GeeksforGeeks problem is successfully solved, the extension can detect the successful submission and send the solution to your configured GitHub repository.
+### 🔄 Automatic Solution Sync
+The moment a GeeksforGeeks problem shows *"Problem Solved Successfully"*, the extension extracts and uploads it — no clicks required.
 
 ### 📁 Organized Repository Structure
-
-Solutions are automatically organized by language and difficulty.
-
-Example:
+Solutions are auto-sorted by language and difficulty, so your repo stays readable as it grows:
 
 ```text
 C++/
@@ -93,133 +82,85 @@ C++/
 │   ├── Largest-in-Array/
 │   │   ├── Largest-in-Array.cpp
 │   │   └── README.md
-│   │
 │   └── Missing-Number/
 │       ├── Missing-Number.cpp
 │       └── README.md
-│
 ├── Medium/
 │   └── Two-Sum-Pair-with-Given-Sum/
 │       ├── Two-Sum-Pair-with-Given-Sum.cpp
 │       └── README.md
-│
 └── Hard/
 ```
 
-This keeps your GitHub DSA repository readable as the number of solved problems grows.
-
 ### 📝 Automatic README Generation
+Every synced problem gets its own `README.md` with the title, difficulty, statement, examples, and a link back to the source problem.
 
-For each synced problem, the extension generates a problem-level `README.md` containing available problem information such as:
+### ♻️ Smart Update, Not Duplicate
+If a solution file already exists, it's **updated in place** rather than creating a second copy.
 
-- Problem title
-- Difficulty
-- Problem statement
-- Examples
-- Source problem link
-- Solution context
+</td>
+<td width="50%" valign="top">
 
-### ♻️ Update Existing Solutions
+### 📊 Live Solving Statistics
+The popup tracks your progress in real time:
 
-If a solution file already exists, the extension updates the existing GitHub file instead of blindly creating another copy.
+<div align="center">
 
-### 📊 Solving Statistics
+| Synced | Easy | Medium | Hard |
+| :----: | :--: | :----: | :--: |
+|   7    |  4   |   2    |  0   |
 
-The popup tracks your synced progress, including:
+</div>
 
-- Total synced problems
-- Easy problems
-- Medium problems
-- Hard problems
-- Last synced problem
-- Last sync time
+Plus the last problem synced and how long ago.
 
-Example:
+### 🔐 Local, Private Configuration
+Your GitHub username, repo, and token live in Chrome's local extension storage — never hard-coded, never displayed again after saving.
 
-```text
-┌─────────┬──────┬────────┬──────┐
-│ 7 Synced│ 4 Easy│ 2 Medium│ 0 Hard │
-└─────────┴──────┴────────┴──────┘
-```
+### ⚠️ Robust Error Handling
+Missing config, bad tokens, repo-not-found, permission errors, network failures, upload conflicts, extraction failures — all handled with clear, specific messages.
 
-### 🔐 Local GitHub Configuration
-
-Your GitHub connection details are stored using Chrome's local extension storage.
-
-The personal access token is not displayed in the connected dashboard after saving.
-
-### ⚠️ Error Handling
-
-The extension includes handling for common synchronization problems, including:
-
-- Missing GitHub configuration
-- Invalid repository URL
-- Missing token
-- Authentication failures
-- Repository not found
-- Permission/API errors
-- Network failures
-- Upload conflicts
-- Code extraction failures
-- Submission detection failures
-
-### 🎯 C++ Focus
-
-The current solution path is designed around C++ DSA submissions:
-
+### 🎯 C++ Focus (for now)
 ```text
 C++/<Difficulty>/<Problem>/<Problem>.cpp
 ```
+Other languages currently fall back to `.txt`.
 
-Other languages currently fall back to a text extension where applicable.
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🧩 How It Works
 
-GFG GitHub Sync uses several extension components working together.
+Four components work together to make the sync invisible:
 
-### 1. Content Script
+| # | Component | Responsibility |
+| :-: | --- | --- |
+| 1 | **Content Script** (`gfg.js`) | Watches the GFG page, detects a successful submission, extracts title, URL, difficulty, language, and problem statement |
+| 2 | **Page Bridge** (`page.js`) | Reaches into GFG's in-page Ace editor to read your current solution code |
+| 3 | **Background Service Worker** (`background.js`) | Validates config, verifies repo access, checks for existing files, uploads/updates via the GitHub API, tracks stats |
+| 4 | **GitHub REST API** | Receives the file via the Contents API and commits it to your repository |
 
-The content script runs on GeeksforGeeks pages and watches for a successful submission.
+```mermaid
+sequenceDiagram
+    participant GFG as GeeksforGeeks Page
+    participant CS as gfg.js (content script)
+    participant PB as page.js (bridge)
+    participant BG as background.js
+    participant API as GitHub REST API
 
-It extracts information such as:
-
-```text
-Problem Title
-Problem URL
-Difficulty
-Language
-Problem Statement
-Solution Code
+    GFG->>CS: "Problem Solved Successfully"
+    CS->>PB: Request current code
+    PB-->>CS: Ace editor code
+    CS->>BG: GFG_ACCEPTED { problem }
+    BG->>API: Verify repository
+    BG->>API: Check existing file
+    BG->>API: Create / update solution + README
+    API-->>BG: Commit result
+    BG-->>CS: Sync status + stats
 ```
-
-### 2. Page Context Bridge
-
-GeeksforGeeks uses an in-page code editor.
-
-The extension uses a small page-context bridge to access the editor's current code and pass it back to the content script.
-
-### 3. Background Service Worker
-
-The background service worker handles the GitHub synchronization logic.
-
-Responsibilities include:
-
-- Reading GitHub configuration
-- Validating repository information
-- Verifying repository access
-- Checking whether a solution already exists
-- Uploading or updating solution files
-- Uploading generated README files
-- Recording sync statistics
-- Maintaining sync status
-
-### 4. GitHub REST API
-
-The extension communicates with GitHub through the GitHub REST API.
-
-The solution is uploaded using the repository contents API.
 
 ---
 
@@ -236,24 +177,24 @@ GFG GitHub Sync
 │   └── icon128.png
 │
 └── src/
-    │
     ├── background/
     │   └── background.js
-    │
     ├── content/
     │   ├── gfg.js
     │   └── page.js
-    │
     └── popup/
         ├── popup.html
         ├── popup.css
         └── popup.js
 ```
 
-### Component responsibilities
+<details>
+<summary><strong>Component responsibilities</strong></summary>
+
+<br/>
 
 | Component | Responsibility |
-|---|---|
+| --- | --- |
 | `manifest.json` | Extension configuration and permissions |
 | `gfg.js` | Detects successful submissions and extracts metadata |
 | `page.js` | Reads code from the GFG editor |
@@ -263,149 +204,97 @@ GFG GitHub Sync
 | `popup.js` | Popup state, connection UI, statistics and sync status |
 | `icons/` | Extension icons |
 
+</details>
+
 ---
 
 ## 📦 Installation
 
-### Option 1 — Load the extension locally
-
-Clone the repository:
+**Load the extension locally:**
 
 ```bash
 git clone https://github.com/coder-nik200/Gfg---Github.git
 cd Gfg---Github
 ```
 
-Then open Chrome:
+Then in Chrome:
 
-```text
-chrome://extensions
-```
-
-1. Enable **Developer mode**.
-2. Click **Load unpacked**.
-3. Select the project folder containing `manifest.json`.
-4. Pin **GFG GitHub Sync** to your Chrome toolbar.
+1. Go to `chrome://extensions`
+2. Enable **Developer mode** (top right)
+3. Click **Load unpacked**
+4. Select the project folder containing `manifest.json`
+5. Pin **GFG GitHub Sync** to your toolbar
 
 ---
 
 ## 🔑 GitHub Setup
 
-The extension needs a GitHub repository where your solutions will be stored.
+<table>
+<tr>
+<td width="33%" valign="top">
 
-### 1. Create a repository
+### 1. Create a repo
+Create a GitHub repository to hold your solutions, e.g. `GeeksforGeeks-Submission`.
 
-Create a repository on GitHub, for example:
+</td>
+<td width="33%" valign="top">
 
-```text
-GeeksforGeeks-Submission
-```
+### 2. Create a token
+Generate a GitHub Personal Access Token with the minimum repo permissions you need.
 
-### 2. Create a Personal Access Token
+> ⚠️ Never commit or share your token.
 
-Create a GitHub Personal Access Token with the minimum repository permissions required for your repository and account setup.
+</td>
+<td width="33%" valign="top">
 
-> **Security:** Never publish your token in this repository, README, screenshots, issues, commits, or source code.
+### 3. Connect it
+Open the popup and enter your username, repository URL, and token, then click **Connect GitHub**.
 
-### 3. Connect the repository
-
-Open the extension and enter:
-
-```text
-GitHub Username
-Repository URL
-Personal Access Token
-```
-
-Example:
+</td>
+</tr>
+</table>
 
 ```text
-Username:
-coder-nik200
-
-Repository:
-https://github.com/coder-nik200/GeeksforGeeks-Submission
+Username:    coder-nik200
+Repository:  https://github.com/coder-nik200/GeeksforGeeks-Submission
 ```
-
-Click:
-
-```text
-Connect GitHub
-```
-
-The extension will store the configuration locally and use it for future synchronization.
 
 ---
 
 ## ▶️ Usage
 
-After connecting GitHub:
-
-### Step 1
-
-Open a GeeksforGeeks problem.
-
-### Step 2
-
-Write your solution.
-
-### Step 3
-
-Submit the solution.
-
-### Step 4
-
-Wait for:
-
-```text
-Problem Solved Successfully
-```
-
-### Step 5
-
-GFG GitHub Sync detects the successful submission.
-
-### Step 6
-
-The extension extracts the current solution and problem information.
-
-### Step 7
-
-The solution and generated README are uploaded to your configured GitHub repository.
-
-### Step 8
-
-The popup updates your sync statistics.
+<table>
+<tr><td width="40" align="center"><strong>1</strong></td><td>Open a GeeksforGeeks problem</td></tr>
+<tr><td align="center"><strong>2</strong></td><td>Write your solution</td></tr>
+<tr><td align="center"><strong>3</strong></td><td>Submit it</td></tr>
+<tr><td align="center"><strong>4</strong></td><td>Wait for <code>Problem Solved Successfully</code></td></tr>
+<tr><td align="center"><strong>5</strong></td><td>GFG GitHub Sync detects the successful submission</td></tr>
+<tr><td align="center"><strong>6</strong></td><td>Solution + metadata are extracted automatically</td></tr>
+<tr><td align="center"><strong>7</strong></td><td>Solution and generated README are pushed to GitHub</td></tr>
+<tr><td align="center"><strong>8</strong></td><td>The popup updates your sync stats</td></tr>
+</table>
 
 ---
 
-## 📂 Example GitHub Result
-
-After solving several problems, your repository can look like:
+## 📂 Example Result
 
 ```text
 GeeksforGeeks-Submission/
-│
 └── C++/
-    │
     ├── Easy/
     │   ├── Largest-in-Array/
     │   │   ├── Largest-in-Array.cpp
     │   │   └── README.md
-    │   │
     │   ├── Missing-Number/
     │   │   ├── Missing-Number.cpp
     │   │   └── README.md
-    │   │
     │   └── Move-All-Zeroes-to-End/
     │       ├── Move-All-Zeroes-to-End.cpp
     │       └── README.md
-    │
     ├── Medium/
     │   └── Two-Sum-Pair-with-Given-Sum/
     │       ├── Two-Sum-Pair-with-Given-Sum.cpp
     │       └── README.md
-    │
     └── Hard/
 ```
 
@@ -413,70 +302,38 @@ GeeksforGeeks-Submission/
 
 ## 🛡️ Permissions
 
-The extension uses a limited set of Chrome permissions needed for its functionality.
-
-### `storage`
-
-Used to store:
-
-- GitHub connection settings
-- Sync status
-- Solving statistics
-
-### GeeksforGeeks host access
-
-Used to:
-
-- Detect successful submissions
-- Read problem metadata
-- Access the solution editor through the page bridge
-
-### GitHub API host access
-
-Used to communicate with GitHub's REST API for:
-
-- Repository verification
-- Solution uploads
-- README uploads
-- Existing-file updates
+| Permission | Used for |
+| --- | --- |
+| `storage` | GitHub connection settings, sync status, solving statistics |
+| GeeksforGeeks host access | Detecting submissions, reading problem metadata, accessing the editor via the page bridge |
+| GitHub API host access | Repository verification, solution uploads, README uploads, existing-file updates |
 
 ---
 
 ## 🔐 Security & Privacy
 
-GFG GitHub Sync is designed so your GitHub token is kept in Chrome extension storage rather than hard-coded into the source code.
+Your GitHub token stays in Chrome's extension storage — never hard-coded into source, never logged, never shown again after saving.
 
-### Important security practices
+- ❌ Never commit a GitHub token
+- ❌ Never share screenshots containing your token
+- ❌ Never place tokens inside JavaScript source files
+- ✅ Use a token with only the permissions you actually need
+- ✅ Revoke a token immediately if it's ever exposed
 
-- Never commit a GitHub token.
-- Never share screenshots containing your token.
-- Never place tokens inside JavaScript source files.
-- Use a token with only the permissions you actually need.
-- Revoke a token immediately if you accidentally expose it.
-
-### Data flow
-
-```text
-GeeksforGeeks
-      │
-      │ Problem + Solution
-      ▼
-GFG GitHub Sync
-      │
-      │ GitHub API request
-      ▼
-Your GitHub Repository
+```mermaid
+flowchart LR
+    A[GeeksforGeeks] -- "Problem + Solution" --> B[GFG GitHub Sync]
+    B -- "GitHub API request" --> C[(Your GitHub Repository)]
 ```
 
-The extension does not require a separate application server for the synchronization flow.
+No separate backend or server is involved — everything happens client-side, directly between the extension and the GitHub API.
 
 ---
 
 ## 🧪 Testing Checklist
 
-Before publishing or distributing the extension, test the following:
-
-### GitHub connection
+<details>
+<summary><strong>GitHub connection</strong></summary>
 
 - [ ] Valid GitHub username
 - [ ] Valid repository URL
@@ -484,8 +341,10 @@ Before publishing or distributing the extension, test the following:
 - [ ] Invalid token
 - [ ] Invalid repository
 - [ ] Private repository access
+</details>
 
-### Submission detection
+<details>
+<summary><strong>Submission detection</strong></summary>
 
 - [ ] Accepted problem
 - [ ] Failed submission
@@ -493,8 +352,10 @@ Before publishing or distributing the extension, test the following:
 - [ ] Page refresh
 - [ ] Problem navigation
 - [ ] Submission after reconnecting
+</details>
 
-### GitHub synchronization
+<details>
+<summary><strong>GitHub synchronization</strong></summary>
 
 - [ ] New solution upload
 - [ ] Existing solution update
@@ -503,8 +364,10 @@ Before publishing or distributing the extension, test the following:
 - [ ] Network failure
 - [ ] GitHub API error
 - [ ] Duplicate solution handling
+</details>
 
-### Popup
+<details>
+<summary><strong>Popup</strong></summary>
 
 - [ ] Connection screen
 - [ ] Connected screen
@@ -512,69 +375,69 @@ Before publishing or distributing the extension, test the following:
 - [ ] Last sync
 - [ ] Error state
 - [ ] Edit connection
+</details>
 
 ---
 
 ## 🛠️ Troubleshooting
 
-### "GitHub repository was not found"
+<details>
+<summary><strong>"GitHub repository was not found"</strong></summary>
+
+<br/>
 
 Check:
+1. Repository URL is correct — `https://github.com/username/repository`
+2. Repository owner is correct
+3. Repository exists
+4. Token has access to the repository
+</details>
 
-1. Repository URL is correct.
-2. Repository owner is correct.
-3. Repository exists.
-4. Token has access to the repository.
+<details>
+<summary><strong>Solution is not syncing</strong></summary>
 
-Example:
-
-```text
-https://github.com/username/repository
-```
-
-### Solution is not syncing
+<br/>
 
 Try:
+1. Reload the extension from `chrome://extensions`
+2. Refresh the GeeksforGeeks page
+3. Submit the problem again
+4. Confirm the success message appears
+5. Check the extension popup for sync status
+</details>
 
-1. Reload the extension from `chrome://extensions`.
-2. Refresh the GeeksforGeeks page.
-3. Submit the problem again.
-4. Confirm the success message appears.
-5. Check the extension popup for the sync status.
+<details>
+<summary><strong>Existing solution is not updating</strong></summary>
 
-### Existing solution is not updating
+<br/>
 
 Confirm that:
-
-- The solution path matches the generated problem path.
-- Your token can write to the repository.
-- The repository's default branch is available to the extension.
+- The solution path matches the generated problem path
+- Your token can write to the repository
+- The repository's default branch is available to the extension
+</details>
 
 ---
 
 ## 🎨 Design Philosophy
 
-The extension follows a simple developer-focused philosophy:
+<div align="center">
 
 > **Solve → Sync → Track**
 
-The interface focuses on:
+</div>
 
-- Minimal friction
-- Clear sync status
-- Dark developer-oriented UI
-- Readable statistics
-- Simple GitHub connection
-- Automatic organization
-
-The goal is to make GitHub maintenance disappear from the DSA practice workflow.
+The interface focuses on minimal friction, clear sync status, a dark developer-oriented UI, readable statistics, and automatic organization — so GitHub maintenance disappears from your DSA practice workflow.
 
 ---
 
 ## 🗺️ Roadmap
 
-### ✅ Current
+<table>
+<tr>
+<td width="50%" valign="top">
 
+**✅ Current**
 - [x] GeeksforGeeks submission detection
 - [x] Solution code extraction
 - [x] Problem metadata extraction
@@ -587,8 +450,10 @@ The goal is to make GitHub maintenance disappear from the DSA practice workflow.
 - [x] Error handling
 - [x] Chrome Manifest V3
 
-### 🔜 Planned
+</td>
+<td width="50%" valign="top">
 
+**🔜 Planned**
 - [ ] Better submission detection across GFG UI changes
 - [ ] More supported programming languages
 - [ ] Sync history
@@ -599,96 +464,80 @@ The goal is to make GitHub maintenance disappear from the DSA practice workflow.
 - [ ] Chrome Web Store release
 - [ ] Automated extension release workflow
 
+</td>
+</tr>
+</table>
+
 ---
 
 ## 🤝 Contributing
 
 Contributions, ideas, bug reports, and improvements are welcome.
 
-### Development workflow
-
 ```bash
 git clone https://github.com/coder-nik200/Gfg---Github.git
-
 cd Gfg---Github
-
 git checkout -b feature/your-feature
 
-# Make your changes
+# make your changes
 
 git add .
-
 git commit -m "Add your change"
-
 git push origin feature/your-feature
 ```
 
-Then open a Pull Request on GitHub.
+Then open a Pull Request. Before submitting, please make sure:
 
-### Before submitting a PR
-
-Please make sure:
-
-- The extension still loads successfully.
-- There are no unnecessary console logs.
-- Existing functionality is not broken.
-- Sensitive credentials are not included.
-- The code remains readable and maintainable.
+- The extension still loads successfully
+- There are no unnecessary console logs
+- Existing functionality is not broken
+- Sensitive credentials are not included
+- The code remains readable and maintainable
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) for the full text.
 
-You are free to use, modify, distribute, and build upon the project in accordance with the license terms.
-
-See the [`LICENSE`](LICENSE) file for the complete license text.
-
-> The MIT License applies to this project's source code. It does not grant rights to GeeksforGeeks content, trademarks, logos, or third-party services/content.
+> The MIT License applies to this project's source code only. It does not grant rights to GeeksforGeeks content, trademarks, logos, or third-party services.
 
 ---
 
-## 👨‍💻 Author
-
 <div align="center">
 
-### Nitish Bharti
+## 👨‍💻 Author
 
-**MERN Stack Developer • DSA Learner • Builder**
+<img src="icons/icon128.png" width="64"/>
+
+### Nitish Bharti
+**MERN Stack Developer · DSA Learner · Builder**
 
 <p>
   <a href="https://github.com/coder-nik200">
     <img src="https://img.shields.io/badge/GitHub-coder--nik200-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
+  <a href="https://www.linkedin.com/in/nitish-kumar-bharti-631a37359/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://x.com/code_Bharti07">
+    <img src="https://img.shields.io/badge/X-@code__Bharti07-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/>
+  </a>
+  <a href="https://mail.google.com/mail/u/0/?compose=new#inbox">
+    <img src="https://img.shields.io/badge/Email-Contact_me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
 </p>
 
-</div>
+<br/>
 
----
+### ⭐ Support the Project
 
-## ⭐ Support the Project
+If GFG GitHub Sync helps you maintain your DSA journey — star the repo, report bugs, suggest features, or share it with other developers. Every contribution helps.
 
-If GFG GitHub Sync helps you maintain your DSA journey:
-
-- ⭐ Star the repository
-- 🐛 Report bugs
-- 💡 Suggest features
-- 🔧 Contribute improvements
-- 📢 Share the project with other developers
-
-Every contribution helps improve the project.
-
----
-
-<div align="center">
-
-<img src="assets/logo.png" alt="GFG GitHub Sync" width="80"/>
-
-### GFG → GitHub
+<br/>
 
 **Your solutions. Your repository. Your progress.**
-
-Made for developers who want to focus on solving problems — not maintaining folders.
+<br/>
+*Made for developers who want to focus on solving problems — not maintaining folders.*
 
 </div>
