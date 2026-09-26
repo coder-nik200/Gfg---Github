@@ -32,7 +32,7 @@
 
 |                     Popup Dashboard                     |                  GitHub Connection                   |
 | :-------------------------------------------------------: | :-----------------------------------------------------: |
-| <img src="assets/screenshots/dashboard.png" width="340"/> | <img src="assets/screenshots/connection.png" width="340"/> |
+| <img width="340" height="347" alt="Image" src="https://github.com/user-attachments/assets/b39164e7-655c-4b91-8f4d-73eac3a48da1" /> | <img width="339" height="339" alt="Image" src="https://github.com/user-attachments/assets/9cc2d727-19ae-47aa-98ec-98fbffa469a7" /> |
 |      *Live sync stats, last upload, and status*         |      *Connect once — username, repo, token*          |
 
 </div>
