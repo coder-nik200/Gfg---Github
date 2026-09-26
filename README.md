@@ -506,29 +506,89 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 <div align="center">
 
-## 👨‍💻 Author
+---
 
-<img src="icons/icon128.png" width="64"/>
+<div align="center">
 
-### Nitish Bharti
-**MERN Stack Developer · DSA Learner · Builder**
+## 👨‍💻 Meet the Creator
+
+<br>
+
+<img src="icons/icon128.png" width="96" alt="GFG GitHub Sync Logo"/>
+
+<br><br>
+
+# **Nitish Bharti**
+
+### `MERN Stack Developer` · `DSA Learner` · `Builder`
 
 <p>
-  <a href="https://github.com/coder-nik200">
-    <img src="https://img.shields.io/badge/GitHub-coder--nik200-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-  <a href="https://www.linkedin.com/in/nitish-kumar-bharti-631a37359/">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="https://x.com/code_Bharti07">
-    <img src="https://img.shields.io/badge/X-@code__Bharti07-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/>
-  </a>
-  <a href="https://mail.google.com/mail/u/0/?compose=new#inbox">
-    <img src="https://img.shields.io/badge/Email-Contact_me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-  </a>
+  Building practical developer tools, solving problems,
+  and turning ideas into real-world projects.
 </p>
 
-<br/>
+<br>
+
+<!-- Social Icons -->
+
+<a href="https://github.com/coder-nik200">
+  <img
+    src="https://img.icons8.com/fluency/48/github.png"
+    width="42"
+    height="42"
+    alt="GitHub"
+  />
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="https://www.linkedin.com/in/nitish-kumar-bharti-631a37359/">
+  <img
+    src="https://img.icons8.com/color/48/linkedin.png"
+    width="42"
+    height="42"
+    alt="LinkedIn"
+  />
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="https://instagram.com/wohh.nitish">
+  <img
+    src="https://img.icons8.com/color/48/instagram-new.png"
+    width="42"
+    height="42"
+    alt="Instagram"
+  />
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="https://x.com/code_Bharti07">
+  <img
+    src="https://img.icons8.com/ios-filled/50/000000/twitterx.png"
+    width="38"
+    height="38"
+    alt="X"
+  />
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="mailto:codesnippet17@gmail.com">
+  <img
+    src="https://img.icons8.com/color/48/gmail-new.png"
+    width="42"
+    height="42"
+    alt="Email"
+  />
+</a>
+
+<br>
+
+<sub>
+  🚀 Build · Learn · Improve · Repeat
+</sub>
+
+</div>
+
+---
 
 ### ⭐ Support the Project
 
