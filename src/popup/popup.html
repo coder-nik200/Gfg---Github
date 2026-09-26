@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>GFG GitHub Sync</title>
+
+    <link rel="icon" href="../../icons/icon48.png" />
+
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img
+          src="../../icons/icon48.png"
+          alt="GFG GitHub Sync"
+          width="28"
+          height="28"
+        />
+      </div>
+
+      <div class="header-text">
+        <h1>GFG <span>→</span> GitHub</h1>
+        <p>Sync your solved problems automatically</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="panel" id="statsPanel">
+      <div class="stats-row" id="statsRow" hidden>
+        <div class="stat total">
+          <div class="num" id="statTotal">0</div>
+          <div class="label">synced</div>
+        </div>
+
+        <div class="stat easy">
+          <div class="num" id="statEasy">0</div>
+          <div class="label">easy</div>
+        </div>
+
+        <div class="stat medium">
+          <div class="num" id="statMedium">0</div>
+          <div class="label">medium</div>
+        </div>
+
+        <div class="stat hard">
+          <div class="num" id="statHard">0</div>
+          <div class="label">hard</div>
+        </div>
+      </div>
+
+      <div class="empty-stats" id="emptyStats">No problems synced yet</div>
+
+      <div class="last-sync" id="lastSync" hidden>
+        <a id="lastSyncLink" href="#" target="_blank" rel="noopener"></a>
+
+        <time id="lastSyncTime"></time>
+      </div>
+    </div>
+
+    <!-- Connected Repository -->
+    <div class="panel" id="connectedPanel" hidden>
+      <div class="connected-row">
+        <div class="repo-line">
+          <span class="dot"></span>
+          <span class="repo-name" id="repoName"></span>
+        </div>
+
+        <button class="link-btn" id="editConnection" type="button">Edit</button>
+      </div>
+    </div>
+
+    <!-- GitHub Connection Form -->
+    <div class="panel" id="formPanel">
+      <div class="field">
+        <label class="field-label" for="username"> GitHub username </label>
+
+        <input
+          id="username"
+          type="text"
+          placeholder="octocat"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="repository"> Repository URL </label>
+
+        <input
+          id="repository"
+          type="text"
+          placeholder="https://github.com/you/repo"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="token"> Personal access token </label>
+
+        <input
+          id="token"
+          type="password"
+          placeholder="ghp_•••• (leave blank to keep current)"
+          autocomplete="off"
+        />
+      </div>
+
+      <button id="connect" type="button">Connect GitHub</button>
+    </div>
+
+    <!-- Status -->
+    <div id="status"></div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <!-- GitHub -->
+      <a
+        href="https://github.com/coder-nik200"
+        target="_blank"
+        rel="noopener"
+        title="GitHub"
+        aria-label="GitHub"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 0C5.37 0 0 5.42 0 12.11c0 5.35 3.44 9.88 8.21 11.48.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.07-3.34.73-4.04-1.63-4.04-1.63-.55-1.42-1.34-1.8-1.34-1.8-1.09-.76.08-.74.08-.74 1.21.08 1.84 1.25 1.84 1.25 1.07 1.85 2.8 1.32 3.49 1 .11-.79.42-1.32.76-1.62-2.67-.31-5.47-1.35-5.47-6.02 0-1.33.46-2.42 1.23-3.27-.12-.31-.53-1.55.12-3.22 0 0 1-.33 3.3 1.25a11.3 11.3 0 0 1 6 0c2.29-1.58 3.29-1.25 3.29-1.25.66 1.67.25 2.91.12 3.22.77.85 1.23 1.94 1.23 3.27 0 4.68-2.8 5.71-5.48 6.01.43.38.81 1.13.81 2.28 0 1.65-.02 2.98-.02 3.38 0 .32.22.7.83.58C20.57 21.98 24 17.46 24 12.11 24 5.42 18.63 0 12 0z"
+          />
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/nitish-kumar-bharti-631a37359/"
+        target="_blank"
+        rel="noopener"
+        title="LinkedIn"
+        aria-label="LinkedIn"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"
+          />
+        </svg>
+      </a>
+
+      <!-- X -->
+      <a
+        href="https://x.com/code_Bharti07"
+        target="_blank"
+        rel="noopener"
+        title="X (Twitter)"
+        aria-label="X"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+          />
+        </svg>
+      </a>
+
+      <!-- Email -->
+      <a
+        href="https://mail.google.com/mail/u/0/?compose=new#inbox"
+        target="_blank"
+        rel="noopener"
+        title="Email me"
+        aria-label="Email"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+          />
+
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+      </a>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
