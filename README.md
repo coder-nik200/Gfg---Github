@@ -573,8 +573,6 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 📧 **Email:** [codesnippet17@gmail.com](mailto:codesnippet17@gmail.com)
 
-<br><br>
-
 <sub>
   🚀 Build · Learn · Improve · Repeat
 </sub>
