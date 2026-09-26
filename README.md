@@ -571,16 +571,9 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-<a href="mailto:codesnippet17@gmail.com">
-  <img
-    src="https://img.icons8.com/color/48/gmail-new.png"
-    width="42"
-    height="42"
-    alt="Email"
-  />
-</a>
+📧 **Email:** [codesnippet17@gmail.com](mailto:codesnippet17@gmail.com)
 
-<br>
+<br><br>
 
 <sub>
   🚀 Build · Learn · Improve · Repeat
