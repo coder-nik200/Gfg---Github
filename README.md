@@ -213,8 +213,8 @@ GFG GitHub Sync
 **Load the extension locally:**
 
 ```bash
-git clone https://github.com/coder-nik200/Gfg---Github.git
-cd Gfg---Github
+git clone https://github.com/coder-nik200/Gfg-Github-Sync.git
+cd Gfg-Github-Sync
 ```
 
 Then in Chrome:
@@ -518,7 +518,7 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 <br><br>
 
-# **Nitish Bharti**
+# **Nitish Kumar Bharti**
 
 ### `MERN Stack Developer` · `DSA Learner` · `Builder`
 
